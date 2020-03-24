@@ -6,4 +6,5 @@ Este projeto será desenvolvido com as seguintes tecnologias:
 
 - Node.js
 - React
-- REact
+- React Native
+- Expo
