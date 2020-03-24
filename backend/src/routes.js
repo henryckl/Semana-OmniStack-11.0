@@ -1,25 +1,11 @@
 import { Router } from 'express';
-import { randomBytes } from 'crypto';
 
 import connection from './database/connection';
-
+import OngController from './controllers/OngController';
 const routes = new Router();
 
-routes.post('/ongs', async (request, response) => {
-  const { name, email, whatsapp, city, uf } = request.body;
+routes.get('/ongs', OngController.index);
 
-  const id = randomBytes(4).toString('HEX');
-
-  await connection('ongs').insert({
-    id,
-    name,
-    email,
-    whatsapp,
-    city,
-    uf,
-  });
-
-  return response.json({ id });
-});
+routes.post('/ongs', OngController.create);
 
 export default routes;
