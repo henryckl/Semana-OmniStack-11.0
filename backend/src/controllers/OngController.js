@@ -1,7 +1,6 @@
 import { randomBytes } from 'crypto';
 
 import connection from '../database/connection';
-
 class OngController {
   async create(request, response) {
     const { name, email, whatsapp, city, uf } = request.body;
